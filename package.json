@@ -1,0 +1,19 @@
+{
+  "name": "nevip-lounge",
+  "version": "1.0.2",
+  "private": true,
+  "description": "A cozy personal lounge and Nintendo Switch player card.",
+  "scripts": {
+    "build": "python3 scripts/build.py",
+    "preview": "python3 scripts/serve.py",
+    "dev": "wrangler dev",
+    "deploy:check": "wrangler deploy --dry-run",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

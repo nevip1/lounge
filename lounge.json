@@ -1,0 +1,10 @@
+{
+  "name": "nevip",
+  "domain": "https://lounge.nevip.dev",
+  "version": "1.0.2",
+  "switch": {
+    "friendCode": "SW-0911-4075-1139",
+    "friendUrl": "https://lounge.nintendo.com/friendcode/0911-4075-1139/CxLNlNfSBp",
+    "appUrl": "https://lounge.nintendo.com/"
+  }
+}

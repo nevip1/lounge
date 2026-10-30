@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "nevip-lounge",
+  "compatibility_date": "2026-10-30",
+  "workers_dev": true,
+  "build": {
+    "command": "python3 scripts/build.py",
+    "watch_dir": ["templates", "assets", "lounge.json", "scripts/build.py"]
+  },
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    {
+      "pattern": "lounge.nevip.dev",
+      "custom_domain": true
+    }
+  ]
+}
