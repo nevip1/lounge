@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f4ec">
+  <meta name="theme-color" content="#f3eefb">
   <meta name="description" content="{{description}}">
   <meta property="og:title" content="{{title}}">
   <meta property="og:description" content="{{description}}">
@@ -19,12 +19,11 @@
 <a class="skip" href="#main">Skip to content</a>
 <div class="site-shell">
   <header class="site-header">
-    <a class="brand" href="/" aria-label="nevip's lounge home"><span class="brand-symbol" aria-hidden="true">l<span>•</span></span><span>nevip<span class="brand-apostrophe">’s</span> lounge<span class="brand-dot">.</span></span></a>
-    <nav aria-label="Main navigation"><a href="/" {{home_current}}>The lounge</a><a href="/switch" {{switch_current}}>Nintendo Switch <span aria-hidden="true">↗</span></a></nav>
-    <button class="theme-button" aria-label="Switch to dark mode" title="Change the lighting"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 14a8 8 0 0 1-10-10 8 8 0 1 0 10 10Z"/></svg></button>
+    <a class="brand" href="/" aria-label="Lounge home"><span aria-hidden="true">✳</span> lounge<span class="brand-slash">/</span></a>
+    <button class="theme-button" aria-label="Switch to dark mode" title="Light / dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 14a8 8 0 0 1-10-10 8 8 0 1 0 10 10Z"/></svg></button>
   </header>
   <main id="main">{{content}}</main>
-  <footer><span>A little corner of the internet. <span class="footer-flower" aria-hidden="true">✳</span></span><span>Made for good company <span aria-hidden="true">↗</span><small>v{{version}}</small></span></footer>
+  <footer><a href="/">nevip’s lounge</a><span>v{{version}} <span class="footer-star" aria-hidden="true">✧</span></span></footer>
 </div>
 <div id="toast" role="status" aria-live="polite"></div>
 </body>

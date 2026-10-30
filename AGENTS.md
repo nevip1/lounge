@@ -4,8 +4,8 @@ This is a small personal link hub at `lounge.nevip.dev`. The homepage is the lob
 
 ## Keep it personal
 
-- Keep the warm paper, coral, sage, playful typography, and handheld-console illustration. It should feel like someone’s little corner of the internet.
-- Write like a person. Short, casual copy works best. Avoid marketing language, invented activity/status, fake stats, and filler sections.
+- Keep the purple/lavender palette, narrow centered layout, simple link cards, and small playful details. Both themes must stay purple. The owner wants a personal link page, not a landing page.
+- Write like a person. Use very short, casual copy and lowercase labels where natural. Avoid slogans, welcome essays, filler cards, and sections explaining the obvious. Avoid marketing language, invented activity/status, fake stats, and filler sections.
 - Only show actual profiles, friend codes, and destinations supplied by the owner. Never fabricate account details or working links for platforms that haven’t been configured.
 - Keep Nintendo branding referential. This is nevip’s personal site, not an official Nintendo service.
 - Preserve the light/dark themes, mobile layout, keyboard focus, reduced-motion support, and useful clipboard failure states.
@@ -15,9 +15,9 @@ This is a small personal link hub at `lounge.nevip.dev`. The homepage is the lob
 - `lounge.json`: public profile information, canonical domain, Nintendo code/link, and version. No secrets belong here.
 - `templates/page.html`: shared document, header, footer, metadata.
 - `templates/home.html`, `templates/switch.html`: page content.
-- `templates/console.html`: original SVG illustration, shared across pages.
+- `templates/console.html`: unused legacy illustration; the current small console icon is inline in the Switch template.
 - `assets/style.css`: responsive styles and themes.
-- `assets/app.js`: theme preference, clipboard, share button, toast feedback.
+- `assets/app.js`: theme preference, friend-code clipboard, toast feedback.
 - `scripts/build.py`: HTML escaping, config validation, and static generation.
 - `scripts/serve.py`: local preview, `/switch` route, and real 404 responses.
 - `dist/`: generated deployment output, ignored by Git. Never edit it directly.
@@ -42,7 +42,7 @@ Cloudflare Workers Builds can install dependencies and execute `npm run deploy` 
 
 - Build successfully and check `/`, `/switch`, `/switch/`, and an unknown route.
 - Check mobile and desktop layouts when a browser is available. Be explicit if visual verification is unavailable.
-- Verify copy, share, theme persistence, keyboard navigation, and external destinations when possible.
+- Verify friend-code copying, theme persistence, keyboard navigation, and external destinations when possible.
 - Preserve the complete Nintendo friend URL, including its trailing share token. It cannot be reconstructed reliably from the code alone.
 - Change the version in `lounge.json` with user-visible updates.
 - Keep the site static unless a requested feature actually needs a backend. Avoid analytics, trackers, dependencies, or account systems without a concrete reason.

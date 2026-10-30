@@ -41,13 +41,13 @@ def build():
     values['console'] = (ROOT / 'templates/console.html').read_text()
     values['friend_action'] = (
         '<a class="primary-button" href="' + html.escape(switch['friendUrl'], quote=True) +
-        '" target="_blank" rel="noopener noreferrer">Add me on Switch <span aria-hidden="true">↗</span>'
+        '" target="_blank" rel="noopener noreferrer">add friend <span aria-hidden="true">↗</span>'
         '<span class="sr-only"> (opens in a new tab)</span></a>'
         if switch['friendUrl'] else '<p class="code-help">My app link is coming soon.</p>'
     )
     for page, path, title, description in [
-        ('home', '', f"{config['name']}’s lounge — room for player two", 'Friend codes, little links, and places to hang out. Welcome to my cozy corner of the internet.'),
-        ('switch', '/switch', f"Nintendo Switch — {config['name']}’s lounge", f"Add {config['name']} on Nintendo Switch. Friend code: {code or 'coming soon'}. Good games start with a friend request."),
+        ('home', '', f"{config['name']}’s lounge — links & friend codes", 'nevip’s links and friend codes.'),
+        ('switch', '/switch', f"Nintendo Switch — {config['name']}’s lounge", f"Add {config['name']} on Nintendo Switch. Friend code: {code or 'coming soon'}. "),
     ]:
         content = render((ROOT / f'templates/{page}.html').read_text(), values)
         page_values = {**values, 'page': page, 'content': content,
@@ -60,7 +60,7 @@ def build():
         output.write_text(render(base, page_values))
     (DIST / '404.html').write_text(render(base, {**values, 'page': '404', 'title': 'Lost in the lounge',
         'description': 'This corner of the lounge does not exist.', 'canonical': html.escape(config['domain'], quote=True),
-        'home_current': '', 'switch_current': '', 'content': '<section class="intro"><div class="eyebrow">WRONG ROOM, RIGHT LOUNGE</div><h1 style="margin:24px 0">Lost your <em>controller?</em></h1><p>This page isn’t here. Let’s get you back.</p><a class="text-link" href="/">Back to the lounge ↗</a></section>'}))
+        'home_current': '', 'switch_current': '', 'content': '<section class="intro"><div class="eyebrow">404</div><h1 style="margin:24px 0">wrong page.</h1><p>nothing here.</p><a class="text-link" href="/">Back to the lounge ↗</a></section>'}))
     (DIST / '_headers').write_text('/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: DENY\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n')
     print(f'Built {DIST}: home, /switch, 404, assets')
 

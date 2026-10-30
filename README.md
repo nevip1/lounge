@@ -4,7 +4,7 @@
 
 **Deploy using the Cloudflare website:** see the [browser-only deployment guide](DEPLOY.md). No local Node.js, Python, or terminal is required for that workflow.
 
-A cozy personal link hub, with a home at `/` and a Nintendo Switch player card at `/switch`. Warm paper, a custom SVG handheld, a little handwritten energy, and room for more platforms later.
+A small purple link page at `/`, with a Nintendo Switch friend code and profile link at `/switch`.
 
 ## Preview
 
@@ -77,8 +77,8 @@ Nintendo app links point to [Nintendo’s official lounge](https://lounge.ninten
 ## Details
 
 - Static HTML/CSS and small vanilla JavaScript; built using Python’s standard library.
-- Real copy and native sharing, with manual selection when browser permissions prevent clipboard access.
-- Light/dark theme with local preference storage. Copy/share rely on JavaScript; the code and profile link remain available without it.
+- Friend-code copying, with manual selection when browser permissions prevent clipboard access.
+- Light/dark theme with local preference storage. Copying relies on JavaScript; the code and profile link remain available without it.
 - Responsive layout, keyboard focus styles, accessible feedback, and reduced-motion support.
 - DM Sans and Space Grotesk load from Google Fonts, with system fallbacks if unavailable.
 - No analytics, cookies, backend, or database.
