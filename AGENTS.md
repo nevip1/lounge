@@ -16,6 +16,7 @@ This is a small personal link hub at `lounge.nevip.dev`. The homepage is the lob
 - `templates/page.html`: shared document, header, footer, metadata.
 - `templates/home.html`, `templates/switch.html`: page content.
 - `templates/console.html`: unused legacy illustration; the current small console icon is inline in the Switch template.
+- `assets/switch-preview-v1.png`: approved 1200×630 Switch social image. Keep the centered purple console and “add me on switch” wording; do not add a provider/site-name label. Bump the image filename when replacing it to avoid stale social caches.
 - `assets/style.css`: responsive styles and themes.
 - `assets/app.js`: theme preference, friend-code clipboard, toast feedback.
 - `scripts/build.py`: HTML escaping, config validation, and static generation.

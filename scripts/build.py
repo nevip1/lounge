@@ -50,8 +50,26 @@ def build():
         ('switch', '/switch', f"Nintendo Switch — {config['name']}’s lounge", f"Add {config['name']} on Nintendo Switch. Friend code: {code or 'coming soon'}. "),
     ]:
         content = render((ROOT / f'templates/{page}.html').read_text(), values)
+        social_title = 'add me on switch' if page == 'switch' else title
+        social_description = (code or 'friend code coming soon') if page == 'switch' else description
+        social_image_meta = ''
+        if page == 'switch':
+            image_url = html.escape(config['domain'].rstrip('/') + '/assets/switch-preview-v1.png', quote=True)
+            social_image_meta = f'''<meta property="og:image" content="{image_url}">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A purple handheld console above the words add me on switch.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="add me on switch">
+  <meta name="twitter:description" content="{html.escape(social_description, quote=True)}">
+  <meta name="twitter:image" content="{image_url}">'''
+
         page_values = {**values, 'page': page, 'content': content,
                        'title': html.escape(title), 'description': html.escape(description, quote=True),
+                       'social_title': html.escape(social_title, quote=True),
+                       'social_description': html.escape(social_description, quote=True),
+                       'social_image_meta': social_image_meta,
                        'canonical': html.escape(config['domain'].rstrip('/') + path, quote=True),
                        'home_current': 'aria-current="page"' if page == 'home' else '',
                        'switch_current': 'aria-current="page"' if page == 'switch' else ''}
@@ -60,7 +78,8 @@ def build():
         output.write_text(render(base, page_values))
     (DIST / '404.html').write_text(render(base, {**values, 'page': '404', 'title': 'Lost in the lounge',
         'description': 'This corner of the lounge does not exist.', 'canonical': html.escape(config['domain'], quote=True),
-        'home_current': '', 'switch_current': '', 'content': '<section class="intro"><div class="eyebrow">404</div><h1 style="margin:24px 0">wrong page.</h1><p>nothing here.</p><a class="text-link" href="/">Back to the lounge ↗</a></section>'}))
+        'social_title': 'Lost in the lounge', 'social_description': 'This page does not exist.',
+        'social_image_meta': '', 'home_current': '', 'switch_current': '', 'content': '<section class="intro"><div class="eyebrow">404</div><h1 style="margin:24px 0">wrong page.</h1><p>nothing here.</p><a class="text-link" href="/">Back to the lounge ↗</a></section>'}))
     (DIST / '_headers').write_text('/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: DENY\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n')
     print(f'Built {DIST}: home, /switch, 404, assets')
 

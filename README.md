@@ -74,6 +74,12 @@ The configuration follows Cloudflare’s [Workers Static Assets documentation](h
 
 Nintendo app links point to [Nintendo’s official lounge](https://lounge.nintendo.com/), the download destination referenced in [Nintendo’s support instructions](https://www.nintendo.com/en-gb/Support/Troubleshooting/How-to-Download-or-Update-the-Nintendo-Switch-App-1520024.html).
 
+## Link preview
+
+`/switch` includes the approved purple “add me on switch” image, with the friend code as the embed description. The metadata is rendered in the initial HTML, so it does not depend on JavaScript. No provider/site-name label is configured. The image is a static PNG; there are no additional build dependencies.
+
+The actual embed requires the HTML and image to be publicly deployed. This local build has not verified Discord rendering. Metadata follows the [Open Graph protocol](https://ogp.me/).
+
 ## Details
 
 - Static HTML/CSS and small vanilla JavaScript; built using Python’s standard library.
