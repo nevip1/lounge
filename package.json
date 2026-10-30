@@ -1,6 +1,6 @@
 {
   "name": "nevip-lounge",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "private": true,
   "description": "A cozy personal lounge and Nintendo Switch player card.",
   "scripts": {

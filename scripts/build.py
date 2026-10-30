@@ -54,12 +54,12 @@ def build():
         social_description = (code or 'friend code coming soon') if page == 'switch' else description
         social_image_meta = ''
         if page == 'switch':
-            image_url = html.escape(config['domain'].rstrip('/') + '/assets/switch-preview-v1.png', quote=True)
+            image_url = html.escape(config['domain'].rstrip('/') + '/assets/switch-preview-v2.png', quote=True)
             social_image_meta = f'''<meta property="og:image" content="{image_url}">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="A purple handheld console above the words add me on switch.">
+  <meta property="og:image:alt" content="Neven’s Switch avatar above the words add me on switch on a purple background.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="add me on switch">
   <meta name="twitter:description" content="{html.escape(social_description, quote=True)}">
